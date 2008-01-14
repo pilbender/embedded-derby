@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-2008-01-13 04:46:44.329 GMT:
- Booting Derby version The Apache Software Foundation - Apache Derby - 10.3.2.1 - (599110): instance c013800d-0117-7178-9684-00000239db98
+2008-01-14 02:27:15.706 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.3.2.1 - (599110): instance c013800d-0117-761f-41e1-00000239eba8
 on database directory /home/scott/netbeans-workspace/namesDB  
 
 Database Class Loader started - derby.database.classpath=''

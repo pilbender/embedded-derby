@@ -28,7 +28,7 @@ public class Main {
 
 		while (q) {
 			menu();
-			input = readInput();
+			input = readInt();
 
 			switch (input) {
 				case 1:
@@ -77,30 +77,33 @@ public class Main {
 		System.out.println("  6. Quit");
 		System.out.print("Make a menu selection: ");
 		System.out.flush();
-
-
 	}
 
-	public static int readInput() throws IOException {
-		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-		int returnValue = (new Integer(input.readLine())).intValue();
-		return returnValue;
-	}
-
+	/**
+	 * Read the input of a String from the user.
+	 * @return
+	 * @throws java.io.IOException
+	 */
 	public static String readString() throws IOException {
 		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-		return input.readLine();
+		return input.readLine().trim();
 	}
 
 	public static Name setName() throws IOException {
-		Name names = new Name();
+		Name name = new Name();
+		System.out.print("Input the key: ");
+		name.setId(readInt());
 		System.out.print("Input First Name: ");
-		names.setFirstName(readString());
+		name.setFirstName(readString());
 		System.out.print("Input Middle Name: ");
-		names.setMiddleName(readString());
+		name.setMiddleName(readString());
 		System.out.print("Inpub Last Name: ");
-		names.setLastName(readString());
+		name.setLastName(readString());
 
-		return names;
+		return name;
+	}
+
+	public static int readInt() throws IOException {
+		return (new Integer(readString())).intValue();
 	}
 }

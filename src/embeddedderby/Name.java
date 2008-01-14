@@ -3,8 +3,6 @@ package embeddedderby;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -16,25 +14,25 @@ import javax.persistence.Table;
 @Table(name = "Names")
 public class Name implements Serializable {
 	private static final long serialVersionUID = 1L;
-	//private Long id;
+	private int id;
 	private String firstName;
 	private String middleName;
 	private String lastName;
 
-	/*
-	public void setId(Long id) {
-		this.id = id;
-	}
+	/**
+	 * Doesn't use autogeneration because that is broken!  Also, there may be 
+	 * some problems with <code>long</code> or <code>Long</code>, but I'm not
+	 * sure.
+	 * @return
 	 */
-
-	/*
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@GeneratedValue
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
-	*/
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	/*
 	@Override
@@ -67,7 +65,6 @@ public class Name implements Serializable {
 		return firstName + " " + middleName + " " + lastName;
 	}
 
-	@Id
 	@Column (name = "first_name")
 	public String getFirstName() {
 		return firstName;
